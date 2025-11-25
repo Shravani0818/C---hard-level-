@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int sensorReadings[4] = {40, 60, 90, 120};  
+    int *ptr = sensorReadings;                  
+    printf("Sensor Readings and Status:\n\n");
+
+    for (int i = 0; i < 4; i++)
+{
+        int reading = *(ptr + i);       
+        int squared = reading * reading;
+
+        printf("Sensor %d:\n", i + 1);
+
+        printf("  Original Reading: %d\n", reading);
+
+        printf("  Squared Value   : %d\n", squared);
+
+        if (squared > 5000) 
+{
+            printf("  Status: High Power Alert!\n\n");
+        } 
+else 
+{
+            printf("  Status: Normal Power Level.\n\n");
+        }
+    }
+
+    return 0;
+}
